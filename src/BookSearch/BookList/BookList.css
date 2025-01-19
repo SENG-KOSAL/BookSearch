@@ -1,0 +1,198 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f0f4f8;
+    color: #333;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+  }
+  
+  /* BookList Section */
+  .booklist {
+    padding: 4rem 1rem;
+    background: linear-gradient(to bottom, #ffffff, #e9ecf4);
+  }
+  
+  .booklist .container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+  
+  .section-title {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+  
+  .section-title h2 {
+    font-size: 2.8rem;
+    font-weight: 700;
+    color: #1e293b;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    position: relative;
+    display: inline-block;
+    background: linear-gradient(to right, #ff6f61, #ff9068);
+    -webkit-background-clip: text;
+    color: transparent;
+  }
+  
+  .section-title h2::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 4px;
+    background: #ff6f61;
+    margin: 0.5rem auto;
+    border-radius: 2px;
+    animation: pulse 1.5s infinite;
+  }
+  
+  @keyframes pulse {
+    0%, 100% {
+      transform: scaleX(1);
+    }
+    50% {
+      transform: scaleX(1.5);
+    }
+  }
+  
+  /* Grid Layout for Books */
+  .booklist-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2.5rem;
+    animation: fadeIn 1.2s ease-in-out;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(10%);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Book Card */
+  .booklist-content .book-card {
+    background: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.4s, box-shadow 0.4s;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+  }
+  
+  .booklist-content .book-card:hover {
+    transform: translateY(-12px) scale(1.02);
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.15);
+  }
+  
+  .booklist-content .book-card img {
+    width: 100%;
+    height: 320px;
+    object-fit: cover;
+    border-bottom: 2px solid #ddd;
+    transition: transform 0.4s ease;
+  }
+  
+  .booklist-content .book-card:hover img {
+    transform: scale(1.05);
+  }
+  
+  /* Book Info */
+  .booklist-content .book-card .book-info {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+  
+  .booklist-content .book-card .book-info h3 {
+    font-size: 1.3rem;
+    color: #2d3748;
+    font-weight: 600;
+    margin: 0;
+    line-height: 1.4;
+    text-transform: capitalize;
+  }
+  
+  .booklist-content .book-card .book-info p {
+    font-size: 1rem;
+    color: #718096;
+    margin: 0;
+    line-height: 1.6;
+  }
+  
+  .booklist-content .book-card .book-info a {
+    margin-top: auto;
+    display: inline-block;
+    text-align: center;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #fff;
+    background: linear-gradient(to right, #ff6f61, #ff9068);
+    padding: 0.7rem 1.5rem;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: background 0.4s ease;
+  }
+  
+  .booklist-content .book-card .book-info a:hover {
+    background: linear-gradient(to right, #ff9068, #ff6f61);
+    box-shadow: 0 4px 12px rgba(255, 111, 97, 0.5);
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .section-title h2 {
+      font-size: 2rem;
+    }
+    .booklist-content {
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    }
+    .booklist-content .book-card img {
+      height: 220px;
+    }
+  }
+  
+  /* Loader Animation */
+  .loader {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 400px;
+  }
+  
+  .loader span {
+    width: 18px;
+    height: 18px;
+    margin: 10px;
+    background-color: #ff6f61;
+    border-radius: 50%;
+    animation: bounce 0.6s infinite alternate ease-in-out;
+  }
+  
+  @keyframes bounce {
+    from {
+      transform: translateY(0);
+    }
+    to {
+      transform: translateY(-20px);
+    }
+  }
+  
