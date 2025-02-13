@@ -1,6 +1,6 @@
 import React from "react";
 // import Navbar from "../Components/Navbar";
-import BookList from "../BookSearch/BookList/BookList";
+// import BookList from "../BookSearch/BookList/BookList";
 import Feartured from "../Feartured/Feartured";
 import Arrivals from "../Arrivals/Arrivals";
 import Reviews from "../reviews/reviews";
